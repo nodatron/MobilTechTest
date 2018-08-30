@@ -2,11 +2,12 @@
 
 <h2>My Aliens</h2>
 
-<ul dnd-sortable-container [sortableData]="aliens" class="aliens">
-  <li *ngFor="let alien of aliens; let i = index" dnd-sortable [sortableIndex]="i" [dragEnabled]="true" [dragData]="todo" dnd-droppable (onDropSuccess)="move($event, i)">
-    <a>
-      <span dnd-sortable-handle></span>
-      <span class="badge">{{alien.id}}</span> {{alien.caption}}
-    </a>
-  </li>
-</ul>
+<div>
+  <ul class="aliens">
+    <li *ngFor="let alien of aliens; let i = index" draggable [dragData]="aliens.indexOf(alien)" droppable (onDrop)="onItemDrop($event, i)">
+      <a>
+        <span class="badge">{{alien.id}}</span> {{alien.caption}}
+      </a>
+    </li>
+  </ul>
+</div>

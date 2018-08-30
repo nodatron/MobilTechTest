@@ -31,7 +31,7 @@ export class AlienService {
     }>(this.alienUrl);
   }
 
-  moveTask(alien: Alien, position: number): void {
-    console.log(`Moved ${JSON.stringify(Alien)} to the position ${position}`);
-  }
+  // moveTask(alien: Alien, position: number): void {
+  //   console.log(`Moved ${JSON.stringify(Alien)} to the position ${position}`);
+  // }
  }

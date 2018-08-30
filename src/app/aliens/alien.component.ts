@@ -34,8 +34,14 @@ export class AlienComponent implements OnInit {
         this.aliens = res.form.map(f => new Alien(f.id, f.caption, f.type));
       });
   }
-
-  move(alien: Alien, pos: number) {
-    this.alienService.moveTask(alien, pos);
+  onItemDrop(e: any, i: number) {
+    const data = this.aliens[e.dragData];
+    const remaining = this.aliens.filter((alien, idx) => idx !== e.dragData);
+    console.log(remaining);
+    this.aliens = [
+      ...remaining.slice(0, i),
+      data,
+      ...remaining.slice(i)
+    ];
   }
 }

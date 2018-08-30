@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { DndModule } from 'ng2-dnd';
+import { NgDragDropModule } from 'ng-drag-drop';
 
 import { AppComponent } from './app.component';
 import { AlienComponent } from './aliens/alien.component';
@@ -14,7 +14,7 @@ import { AlienComponent } from './aliens/alien.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    DndModule.forRoot()
+    NgDragDropModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
