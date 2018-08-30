@@ -1,0 +1,12 @@
+<h2>{{formId}}</h2><h3>{{lastChangedBy}}</h3><h3>{{lastChangedDate}}</h3>
+
+<h2>My Aliens</h2>
+
+<ul dnd-sortable-container [sortableData]="aliens" class="aliens">
+  <li *ngFor="let alien of aliens; let i = index" dnd-sortable [sortableIndex]="i" [dragEnabled]="true" [dragData]="todo" dnd-droppable (onDropSuccess)="move($event, i)">
+    <a>
+      <span dnd-sortable-handle></span>
+      <span class="badge">{{alien.id}}</span> {{alien.caption}}
+    </a>
+  </li>
+</ul>
