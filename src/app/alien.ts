@@ -3,9 +3,7 @@ export class Alien {
   caption: string;
   type: string;
 
-  constructor(id: string, caption: string, type: string) {
-    this.id = id;
-    this.caption = caption;
-    this.type = type;
+  constructor(data: object) {
+    Object.assign(this);
   }
 }

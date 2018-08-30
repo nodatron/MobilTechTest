@@ -1,0 +1,27 @@
+.aliens {
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.aliens li {
+  position: relative;
+  cursor: pointer;
+  background-color: #EEE;
+  border-radius: 4px;
+}
+ 
+.aliens li:hover {
+  color: #607D8B;
+  background-color: #6dbdff;
+}
+ 
+.aliens a {
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+ 
+.aliens .item {
+  display: inline-block;
+}

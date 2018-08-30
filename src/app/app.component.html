@@ -1,4 +1,18 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>{{title}}</div>
-<app-alien></app-alien>
+<h3>Form ID: {{formId}}</h3>
+<h3>Last changed by {{lastChangedBy}} on {{lastChangedDate}}</h3>
+
+<h2>Form</h2>
+<div>
+  <ul class="aliens">
+    <!--
+      draggable, droppable directives are given by the library ng-drag-drop 
+      dragData will contain the index of the i=tem being dragged and this is passed as part of the event object to method onDrop calls.  onDrop also provides the index where the item is dropped
+    -->
+    <li *ngFor="let alien of aliens; let i = index" draggable [dragData]="aliens.indexOf(alien)" droppable (onDrop)="onItemDrop($event, i)">
+      <a>
+        <span class="item">{{alien.id}}</span> {{alien.caption}}
+      </a>
+    </li>
+  </ul>
+</div>
 

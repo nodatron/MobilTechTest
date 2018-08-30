@@ -1,20 +1,27 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Alien } from '../alien';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class AlienService {
-
+@Injectable()
+export class AppService {
+  // url of the endpoint
   private alienUrl = 'http://www.mocky.io/v2/59f7760a2f0000ab1d55864e';
 
   constructor(private http: HttpClient) {
   }
 
+  /**
+   * @description calls the endpoint and returns the data
+   * @returns {Observable<{
+   *     formId: string,
+   *     userId: string,
+   *     lastChangedBy: string,
+   *     lastChangedDate: Date,
+   *     form: []
+   *   }>} the data from the http call
+   * @memberof AppService
+   */
   getAliens(): Observable<{
     formId: string,
     userId: string,
@@ -30,8 +37,4 @@ export class AlienService {
       form: []
     }>(this.alienUrl);
   }
-
-  // moveTask(alien: Alien, position: number): void {
-  //   console.log(`Moved ${JSON.stringify(Alien)} to the position ${position}`);
-  // }
  }
